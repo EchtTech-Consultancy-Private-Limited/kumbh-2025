@@ -25,19 +25,19 @@
     <div class="main-container row pb-5 g-0">
         <div class="logo-header">
             <div class="left-logo">
-                <img src="assets/images/logo-1.jpeg" alt="">
+                <img src="{{asset('assets/images/logo-1.jpeg')}}" alt="">
             </div>
             <div class="middle">
                 <marquee behavior="" direction="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate recusandae tenetur doloremque aspernatur earum molestias.</marquee>
             </div>
             <div class="right-logo">
-                <img src="assets/images/logo-2.jpeg" alt="">
+                <img src="{{asset('assets/images/logo-2.jpeg')}}" alt="">
             </div>
         </div>
         <div class="col-md-12 first-child">
             <div class="banner">
                 <!-- <img src="assets/images/banner5.jpg" alt=""> -->
-                <img src="assets/images/banner_img.jpg" alt="">
+                <img src="{{asset('assets/images/banner_img.jpg')}}" alt="">
             </div>
         </div>
         <div class="second-child">
@@ -47,17 +47,17 @@
 
                         <div class="wrapper">
                             <div class="my-slider">
-                                <div class="img-slider"><img src="assets/images/left-img.jpg" alt=""></div>
-                                <div class="img-slider"><img src="assets/images/left-img-1.jpg" alt=""></div>
-                                <div class="img-slider"><img src="assets/images/left-img-2.jpg" alt=""></div>
-                                <div class="img-slider"><img src="assets/images/left-img-3.jpg" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-img.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-img-1.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-img-2.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-img-3.jpg')}}" alt=""></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="map height-fixed text-center">
-                        <img src="assets/images/map.png" frameborder="0"></img>
+                        <img src="{{asset('assets/images/map.png')}}" frameborder="0"></img>
                     </div>
                 </div>
                 <div class="col-md-3 right">
@@ -84,10 +84,10 @@
                         <div class="bottom-image">
                         <div class="wrapper">
                             <div class="my-slider">
-                                <div class="img-slider"><img src="assets/images/right-bottom-img.jpg" alt=""></div>
-                                <div class="img-slider"><img src="assets/images/right-bottom-img-1.jpg" alt=""></div>
-                                <div class="img-slider"><img src="assets/images/right-bottom-img-2.png" alt=""></div>
-                                <div class="img-slider"><img src="assets/images/right-bottom-img.jpg" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-1.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-2.png')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}" alt=""></div>
                             </div>
                         </div>
                         </div>
