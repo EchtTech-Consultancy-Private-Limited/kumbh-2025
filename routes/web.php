@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentOperation;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [QuizController::class, 'homePage'])->name('home');
 
 
 Route::get('/home', function () {

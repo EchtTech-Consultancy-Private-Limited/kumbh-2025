@@ -75,24 +75,24 @@
                              
                               <td>
                                   <?php 
-                                  if(strtotime($std_info['exam_date']) == strtotime(date('Y-m-d'))){
-                                    if($std_info['exam_joined']==0){
+                                  // if(strtotime($std_info['exam_date']) == strtotime(date('Y-m-d'))){
+                                  //   if($std_info['exam_joined']==0){
 
                                   ?>
                                     <a href="{{ url('student/join_exam/'.$std_info['exam_id'])}}" class="btn btn-primary btn-sm">Join Exam</a>
                                   
                                   <?php
-                                      } else{
+                                      // } else{
                                   ?>      
                                         <a href="{{ url('student/view_answer/'.$std_info['exam_id'])}}" class="btn btn-primary btn-sm">View Answers</a>
 
                                   
                                   <?php     
-                                      }
+                                    //   }
                                     
                                     
                                     
-                                    }
+                                    // }
                                   ?>
                               </td>
                             </tr>
