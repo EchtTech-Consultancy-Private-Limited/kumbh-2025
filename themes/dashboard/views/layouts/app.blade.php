@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="{{ url('assets/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ url('assets/plugins/summernote/summernote-bs4.min.css')}}">
+  <link rel="stylesheet" href="{{ url('assets/css/custom-style.css')}}">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -180,14 +181,13 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">Online Examination</span>
-    </a>
+    <a href="{{ url('/admin/dashboard') }}" class="brand-link">
+      <img src="{{ asset('/assets/images/kumbh/logo2.jpeg') }}" alt="Online Examination Logo" class="brand-logo">
+    </a>    
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-
       <!-- SidebarSearch Form -->
       
 

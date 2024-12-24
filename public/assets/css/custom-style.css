@@ -1,0 +1,11 @@
+.brand-logo {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Maintain aspect ratio */
+}
+.brand-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-decoration: none;
+}
