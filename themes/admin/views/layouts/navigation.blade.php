@@ -1,7 +1,10 @@
 <nav class="bg-white shadow-sm navbar navbar-expand-md navbar-light">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <b>Quiz Application</b>
+            <!-- <b>Quiz Application</b> -->
+            <div class="navbar-brand-wrapper ">
+                <img src="{{ url('assets/images/kumbh/logo2.jpeg')}}" alt="">
+            </div>      
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -17,7 +20,7 @@
             <ul class="ml-auto navbar-nav">
                 <!-- Authentication Links -->
                 @guest('admin')
-                    @if (Route::has('login'))
+                    <!-- @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a>
                         </li>
@@ -27,7 +30,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
                         </li>
-                    @endif
+                    @endif -->
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
