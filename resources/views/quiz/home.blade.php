@@ -10,14 +10,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
 
     <!-- Slick JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
@@ -27,7 +27,8 @@
                 <img src="{{asset('assets/images/logo-1.jpeg')}}" alt="">
             </div>
             <div class="middle">
-                <marquee behavior="" direction="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate recusandae tenetur doloremque aspernatur earum molestias.</marquee>
+                <marquee behavior="" direction="left">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Cupiditate recusandae tenetur doloremque aspernatur earum molestias.</marquee>
             </div>
             <div class="right-logo">
                 <img src="{{asset('assets/images/logo-2.jpeg')}}" alt="">
@@ -35,13 +36,13 @@
         </div>
         <div class="col-md-12 first-child">
             <div class="banner">
-                <!-- <img src="assets/images/banner5.jpg" alt=""> -->
+                <!-- <img src="{{asset('assets/images/banner5.jpg')}}" alt=""> -->
                 <img src="{{asset('assets/images/banner_img.jpg')}}" alt="">
             </div>
         </div>
         <div class="second-child">
-            <div class="row g-0 mx-3">
-                <div class="col-md-3">
+            <div class="row g-0 mx-3 second-child-box">
+                <div class="col-md-3 first-childd">
                     <div class="left-image height-fixed">
 
                         <div class="wrapper">
@@ -54,12 +55,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 second-childd">
                     <div class="map height-fixed text-center">
                         <img src="{{asset('assets/images/map.png')}}" frameborder="0"></img>
                     </div>
                 </div>
-                <div class="col-md-3 right">
+                <div class="col-md-3 right third-childd">
                     <div class="right-child height-fixed">
                         <div class="discrittion-box">
                             <section>
@@ -75,53 +76,60 @@
                                 <ul>
                                     <li>Shahi Snan (Royal Bath)</li>
                                     <li>Processions of Akharas (groups of saints and sages)</li>
-                                    <li>Spiritual discourses and cultural performances</li>
+                                    <!-- <li>Spiritual discourses and cultural performances</li> -->
 
                                 </ul>
                             </section>
                         </div>
                         <div class="bottom-image">
-                        <div class="wrapper">
-                            <div class="my-slider">
-                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-1.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-2.png')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}" alt=""></div>
+                            <div class="wrapper">
+                                <div class="my-slider">
+                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}"
+                                            alt=""></div>
+                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-1.jpg')}}"
+                                            alt=""></div>
+                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-2.png')}}"
+                                            alt=""></div>
+                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}"
+                                            alt=""></div>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+
     <script>
-    $(document).ready(function() {
-        $('.my-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: false,
-            speed: 500,
-            infinite: true,
-            autoplaySpeed: 5000,
-            autoplay: true,
-            responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 3,
+        $(document).ready(function() {
+            $('.my-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                speed: 500,
+                infinite: true,
+                autoplaySpeed: 55555000,
+                autoplay: true,
+                responsive: [{
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                        }
                     }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
+                ]
+            });
         });
-    });
     </script>
 </body>
-</html>
