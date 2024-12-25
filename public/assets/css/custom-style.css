@@ -11,7 +11,7 @@
 }
 
 body{
-   
+    
     overflow-x: hidden;
     font-family: 'Arial', sans-serif !important;
     margin: 0;
@@ -24,6 +24,7 @@ body{
 }
 .second-child {
     margin-top: 15px !important;
+    margin-bottom: 12px;
 }
 
 .banner {
@@ -50,7 +51,7 @@ body{
 }
 .map img {
     width:auto;
-    height: 100%;
+    height: 92%;
     object-fit: cover;
 }
 .right-child.height-fixed {
@@ -58,9 +59,10 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
-.bottom-image {
-    height: 221px;
+.discrittion-box, .bottom-image {
+    height: 50%;
 }
+ 
 .bottom-image img {
     width: 100%;
     height: 292px;
@@ -93,7 +95,7 @@ body{
 }
 
 .height-fixed {
-    height: 458px;
+    height: 450px;
 }
 .wrapper, .my-slider.slick-initialized.slick-slider {
     height: 100%;
@@ -162,7 +164,56 @@ marquee {
     font-size: 15px;
     color: #c42911;
 }
+.map-quiz-title {
+    margin: 0px 10px;
+    /* background-color: #b86517; */
+    padding: 10px;
+    border: 2px solid #ffec2a;
+    animation: drift 1s linear infinite, bg-color-change 1s linear infinite; /* Add background animation */
+}
 
+/* Keyframes for background color change */
+@keyframes bg-color-change {
+    0% {
+        background-color: red; /* Start with red */
+    }
+    50% {
+        background-color: blue; /* Change to blue */
+    }
+    100% {
+        background-color: red; /* Back to red */
+    }
+}
+
+.map.height-fixed.text-center p {
+    font-size: 16px;
+    margin: 0;
+    color: #fff;
+}
+
+.footer {
+    background-color: #6f6f6f;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.footer p {
+    margin: 0;
+    font-size: 12px;
+}
+.border{
+    
+}
+.main-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 @media (max-width:1299px) {
     .map img {
@@ -181,19 +232,20 @@ marquee {
         top: 50%;
     }
 }
-@media only screen and (min-width: 1300px) and (max-width: 1900px){
-    .bottom-image img {
-        width: 100%;
-        height: 274px;
-    }
-}
-@media (min-width:1905px){
-    .main-container.row.pb-5.g-0, .logo-header {
+
+@media (min-width:1921px){
+    .main-container, .logo-header {
         width: 1905px !important;
         margin: 0 auto;
+        display: flex !important;
+        justify-self: center;
+
     }
     .row.g-0.mx-3.second-child-box {
         margin: 0 !important;
+    }
+    .main-container{
+        height: unset;
     }
 }
 
@@ -229,6 +281,7 @@ marquee {
     }
     .second-child-box .first-childd, .second-child-box .second-childd, .second-child-box .third-childd {
         width: 100%;
+        margin: 10px 0;
     }
     .bottom-image img {
         width: 100%;
@@ -241,7 +294,12 @@ marquee {
         min-height: 1px;
     }
     .right-child.height-fixed {
-        height: 783px;
+        height: 760px;
+    }
+    .right-child.height-fixed {
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
     }
     .bottom-image .wrapper {
         height: 467px;
@@ -266,4 +324,155 @@ marquee {
     .discrittion-box h6{
         font-family: 22px;
     }
+
 }
+
+@media only screen and (min-width: 1025px) and (max-width: 1299px){
+    .bottom-image img {
+        width: 100%;
+        height: 274px;
+    }
+    .banner {
+        width: 100%;
+        height: 230px;
+    }
+    .height-fixed {
+        height: 320px;
+    }
+    .discrittion-box {
+        height: 40%;
+    }
+    .bottom-image{
+        height: 50%;
+    }
+    .second-child .left-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .map img {
+        width: auto;
+        height: 270px;
+        object-fit: cover;
+    }
+    .discrittion-box h5 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #ec4809;
+    }
+    .discrittion-box h6 {
+        font-weight: 600;
+        letter-spacing: .3px;
+        font-size: 11px;
+    }
+    .discrittion-box p {
+        font-size: 10px;
+        color: #464646;
+        margin-bottom: 6px;
+    }
+    .discrittion-box li {
+        font-size: 10px;
+        color: #545454;
+    }
+    .bottom-image {
+        height: 45%;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1599px){
+    .bottom-image img {
+        width: 100%;
+        height: 274px;
+    }
+    .banner {
+        width: 100%;
+        height: 280px;
+    }
+    .height-fixed {
+        height: 385px;
+    }
+    .discrittion-box {
+        height: 40%;
+    }
+    .bottom-image{
+        height: 50%;
+    }
+    .discrittion-box h5 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #ec4809;
+    }
+    .discrittion-box h6 {
+        font-weight: 600;
+        letter-spacing: .3px;
+        font-size: 13px;
+    }
+    .discrittion-box p {
+        font-size: 12px;
+        color: #464646;
+        margin-bottom: 6px;
+    }
+    .discrittion-box li {
+        font-size: 12px;
+        color: #545454;
+    }
+    .map img {
+        width: auto;
+        height: 337px;
+        object-fit: cover;
+    }
+    .bottom-image {
+        height: 45%;
+    }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1900px){
+    .bottom-image img {
+        width: 100%;
+        height: 274px;
+    }
+    .banner {
+        width: 100%;
+        height: 280px;
+    }
+    .height-fixed {
+        height: 420px;
+    }
+    .discrittion-box {
+        height: 40%;
+    }
+    .bottom-image{
+        height: 50%;
+    }
+    .discrittion-box h5 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #ec4809;
+    }
+    .discrittion-box h6 {
+        font-weight: 600;
+        letter-spacing: .3px;
+        font-size: 13px;
+    }
+    .discrittion-box p {
+        font-size: 12px;
+        color: #464646;
+        margin-bottom: 6px;
+    }
+    .discrittion-box li {
+        font-size: 12px;
+        color: #545454;
+    }
+    .map img {
+        width: auto;
+        height: 370px;
+        object-fit: cover;
+    }
+    .bottom-image {
+        height: 45%;
+    }
+}
+
+
+
+

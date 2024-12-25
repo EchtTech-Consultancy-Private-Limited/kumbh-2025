@@ -21,115 +21,124 @@
 </head>
 
 <body>
-    <div class="main-container row pb-5 g-0">
+    <div class="main-container row g-0">
         <div class="logo-header">
             <div class="left-logo">
-                <img src="{{asset('assets/images/logo-1.jpeg')}}" alt="">
+                <img src="{{asset('assets/images/logo-1.jpg')}}" alt="">
             </div>
-            <div class="middle">
+            <!-- <div class="middle">
                 <marquee behavior="" direction="left">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Cupiditate recusandae tenetur doloremque aspernatur earum molestias.</marquee>
-            </div>
+            </div> -->
             <div class="right-logo">
                 <img src="{{asset('assets/images/logo-2.jpeg')}}" alt="">
             </div>
         </div>
         <div class="col-md-12 first-child">
             <div class="banner">
-                <!-- <img src="{{asset('assets/images/banner5.jpg')}}" alt=""> -->
-                <img src="{{asset('assets/images/banner_img.jpg')}}" alt="">
+                <img src="{{asset('assets/images/Banner.jpg')}}" alt="">
             </div>
         </div>
         <div class="second-child">
             <div class="row g-0 mx-3 second-child-box">
+                <!--Start Left Side Banner -->
                 <div class="col-md-3 first-childd">
                     <div class="left-image height-fixed">
 
                         <div class="wrapper">
                             <div class="my-slider">
-                                <div class="img-slider"><img src="{{asset('assets/images/left-img.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/left-img-1.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/left-img-2.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-side.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-side1.jpg')}}" alt=""></div>
+                                <div class="img-slider"><img src="{{asset('assets/images/left-side2.jpg')}}" alt=""></div>
                                 <div class="img-slider"><img src="{{asset('assets/images/left-img-3.jpg')}}" alt=""></div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--End Left Side Banner -->
+                <!--Start Center -->
                 <div class="col-md-6 second-childd">
                     <div class="map height-fixed text-center">
-                        <img src="{{asset('assets/images/map.png')}}" frameborder="0"></img>
+                        <div class="map-quiz-title"><p> 👇🏻 Click on the below image to play the quiz and win the certificate. 👇🏻</p></div>
+                        <button class="border" onclick="getForm()">
+                            <img src="{{asset('assets/images/map.jpg')}}" frameborder="0" id="imageShow" class="hideshow"></img>
+                        </button>
                     </div>
                 </div>
+                <!--End Center -->
+                <!--Start Right Side Banner -->
                 <div class="col-md-3 right third-childd">
                     <div class="right-child height-fixed">
                         <div class="discrittion-box">
                             <section>
-                                <h5>About the Kumbh Mela</h5>
+                                <h5>कुम्भ मेले के बारे में!</h5>
                                 <p>
-                                    The Kumbh Mela is one of the largest spiritual gatherings in the world. Held in
-                                    Allahabad (now Prayagraj), it is a grand event
-                                    that occurs every 12 years at the confluence of the Ganga, Yamuna, and the mythical
-                                    Saraswati rivers.
+                                    कुम्भ मेला देश में एक केंद्रीय आध्यात्मिक भूमिका निभाता है, जो आम भारतीयों पर एक मंत्रमुग्ध प्रभाव डालता है। यह आयोजन खगोल विज्ञान, ज्योतिष, आध्यात्मिकता, अनुष्ठानिक परंपराओं और सामाजिक और सांस्कृतिक रीति-रिवाजों और प्रथाओं के विज्ञान को समाहित करता है, जिससे यह ज्ञान में बेहद समृद्ध है।
                                 </p>
 
-                                <h6>Highlights</h6>
+                                <h6>मुख्य!</h6>
                                 <ul>
-                                    <li>Shahi Snan (Royal Bath)</li>
-                                    <li>Processions of Akharas (groups of saints and sages)</li>
+                                    <li>कुम्भ मेला हिंदू धर्म का सबसे बड़ा मेला होता है।</li>
+                                    <li>इस मेले को हर तीन साल में एक नये स्थान पर आयोजित किया जाता है। </li>
                                     <!-- <li>Spiritual discourses and cultural performances</li> -->
-
                                 </ul>
+                                <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
+                            <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत को संरक्षित करके वर्तमान को अतीत से जोड़ना और इसे आस्था आधारित पर्यटन के वैश्विक केंद्र के रूप में बढ़ावा देता है!</p>
                             </section>
                         </div>
                         <div class="bottom-image">
-                            <div class="wrapper">
+                            <!-- <div class="wrapper">
                                 <div class="my-slider">
                                     <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}"
                                             alt=""></div>
                                     <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-1.jpg')}}"
                                             alt=""></div>
-                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-2.png')}}"
-                                            alt=""></div>
-                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}"
-                                            alt=""></div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
+                <!--End Right Side Banner -->
             </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 UP State Archaeology Department All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <script>
-        $(document).ready(function() {
-            $('.my-slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: false,
-                speed: 500,
-                infinite: true,
-                autoplaySpeed: 55555000,
-                autoplay: true,
-                responsive: [{
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            slidesToShow: 1,
-                        }
+        function getForm(){
+            alert()
+            document.getElementById('imageShow').style.visibility='hidden';
+        }
+    $(document).ready(function() {
+        $('.my-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+            speed: 500,
+            infinite: true,
+            autoplaySpeed: 2000,
+            autoplay: true,
+            responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
                     }
-                ]
-            });
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
         });
+    });
     </script>
 </body>
