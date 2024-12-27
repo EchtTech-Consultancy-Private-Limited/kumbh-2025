@@ -18,14 +18,18 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Quiz routes
 Route::get('/', [QuizController::class, 'homePage'])->name('home');
-Route::get('/home1', [QuizController::class, 'homePage1'])->name('home1');
-Route::get('/home2', [QuizController::class, 'homePage2'])->name('home2');
-Route::get('/home3', [QuizController::class, 'homePage3'])->name('home3');
+Route::get('/quiz-start', [QuizController::class, 'quizStart'])->name('quizStart');
+Route::post('/user-store', [QuizController::class, 'storeUser'])->name('storeUser');
+Route::get('/quiz-question', [QuizController::class, 'quizQuestion'])->name('quizQuestion');
+Route::get('/quiz-certificate', [QuizController::class, 'quizCerticate'])->name('quizCerticate');
+// End Quiz routes
 
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
+
 Route::prefix('admin')->middleware('theme:dashboard')->name('admin.')->group(function(){
         Route::middleware(['auth:admin'])->group(function(){
             Route::get('/dashboard',[AdminController::class,'index']);
@@ -59,8 +63,6 @@ Route::prefix('admin')->middleware('theme:dashboard')->name('admin.')->group(fun
             Route::post('/add_new_students',[AdminController::class,'add_new_students']);
         });
 });
-
-
 
 /* Student section routes */
 Route::prefix('student')->middleware('theme:dashboard')->name('student.')->group(function(){

@@ -2,9 +2,9 @@
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <!-- <b>Quiz Application</b> -->
-            <div class="navbar-brand-wrapper ">
+            {{-- <div class="navbar-brand-wrapper ">
                 <img src="{{ url('assets/images/kumbh/logo2.jpeg')}}" alt="">
-            </div>      
+            </div>       --}}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>

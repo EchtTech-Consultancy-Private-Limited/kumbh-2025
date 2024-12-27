@@ -97,8 +97,16 @@ var interval;
 	countdown();
 
 
-    function myFunction() {
-        document.getElementById("myCheck").click();
-      }
+function myFunction() {
+    document.getElementById("myCheck").click();
+    }
+    
+function validateInput(input) {
+    input.value = input.value.replace(/\D/g, '');
+}
+// Input Char Only
+function validateInputChar(input) {
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+}
     
 

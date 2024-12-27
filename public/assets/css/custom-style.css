@@ -10,6 +10,11 @@
     text-decoration: none;
 }
 
+label.error {
+    color: red;
+    font-size: x-small;
+}
+
 body{
     
     overflow-x: hidden;

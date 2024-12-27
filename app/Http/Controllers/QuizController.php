@@ -2,24 +2,70 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
-{
+{    
+    /**
+     * homePage
+     *
+     * @return void
+     */
     public function homePage()
     {
         return view('quiz.home');
     }
-    public function homePage1()
+        
+    /**
+     *  @quizStart HOme Page
+     *
+     * @return void
+     */
+    public function quizStart()
     {
-        return view('quiz.home1');
+        return view('quiz.quiz_start');
     }
-    public function homePage2()
+
+    /**
+     *  @storeUser store user
+     *
+     * @param  mixed $request
+     * @return void
+     */
+    public function storeUser(Request $request)
     {
-        return view('quiz.home2');
+        try {
+            User::create([
+                'name' => $request->input('name'),
+                'age' => $request->input('age'),
+                'mobile_no' => $request->input('mobile'),
+            ]);
+            return view('quiz.quiz_question')->with('success', 'User details saved successfully!');
+        } catch (\Exception $e) {
+            \Log::error('Error saving user: ' . $e->getMessage());
+            return back()->with('error', 'An error occurred while saving the user details. Please try again.');
+        }
     }
-    public function homePage3()
+
+        
+    /**
+     *  @quizQuestion Question
+     *
+     * @return void
+     */
+    public function quizQuestion()
     {
-        return view('quiz.home3');
+        return view('quiz.quiz_question');
+    }
+        
+    /**
+     *  @quizCerticate download
+     *
+     * @return void
+     */
+    public function quizCerticate()
+    {
+        return view('quiz.quiz_certificate');
     }
 }
