@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [QuizController::class, 'homePage'])->name('home');
+Route::get('/home1', [QuizController::class, 'homePage1'])->name('home1');
+Route::get('/home2', [QuizController::class, 'homePage2'])->name('home2');
+Route::get('/home3', [QuizController::class, 'homePage3'])->name('home3');
 
 Route::get('/home', function () {
     return view('home');

@@ -18,6 +18,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 
 <body>
@@ -59,10 +96,19 @@
                 <!--Start Center -->
                 <div class="col-md-6 second-childd">
                     <div class="map height-fixed text-center">
-                        <div class="map-quiz-title"><p> 👇🏻 Click on the below image to play the quiz and win the certificate. 👇🏻</p></div>
-                        <button class="border">
-                            <a href="{{url('home1') }}"><img src="{{asset('assets/images/map.jpg')}}" frameborder="0" id="imageShow" class="hideshow"></img></a>
-                        </button>
+                    <form action="/submit" method="post">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        <label for="name">Age</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your age" required>
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" 
+                            pattern="[0-9]{10}" required>
+                        <!-- <small>Format: 10-digit mobile number</small> -->
+
+                        <a href="{{ url('home2') }}" class="btn btn-primary">Submit</a>
+                    </form>
+                    
                     </div>
                 </div>
                 <!--End Center -->

@@ -10,4 +10,16 @@ class QuizController extends Controller
     {
         return view('quiz.home');
     }
+    public function homePage1()
+    {
+        return view('quiz.home1');
+    }
+    public function homePage2()
+    {
+        return view('quiz.home2');
+    }
+    public function homePage3()
+    {
+        return view('quiz.home3');
+    }
 }

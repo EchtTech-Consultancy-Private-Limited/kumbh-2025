@@ -18,6 +18,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 
 <body>
@@ -58,11 +95,30 @@
                 <!--End Left Side Banner -->
                 <!--Start Center -->
                 <div class="col-md-6 second-childd">
-                    <div class="map height-fixed text-center">
-                        <div class="map-quiz-title"><p> 👇🏻 Click on the below image to play the quiz and win the certificate. 👇🏻</p></div>
-                        <button class="border">
-                            <a href="{{url('home1') }}"><img src="{{asset('assets/images/map.jpg')}}" frameborder="0" id="imageShow" class="hideshow"></img></a>
-                        </button>
+                    <div class="map height-fixed">
+                    <h2></h2>
+                    <form action="/submit" method="post">
+                        <label for="name">Q:1 कर्दमेश्वर महादेव मंदिर कहाँ स्थित है?</label>
+                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> वाराणसी
+                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> अयोध्या
+                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> प्रयागराज
+                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> मथुरा
+                        <br><br>
+                        <label for="name">Q:2  कर्दमेश्वर महादेव मंदिर किस देवता को समर्पित है?</label>
+                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> भगवान विष्णु
+                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> भगवान शिव
+                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> भगवान कृष्ण
+                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> देवी दुर्गा
+                        <br><br>
+                        <label for="name">Q:3  कर्दमेश्वर महादेव मंदिर का संबंध किस नदी से है?</label>
+                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> गंगा
+                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> यमुना
+                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> सरस्वती
+                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> गोमती
+                       
+                        <br><br>
+                        <a href="{{ url('home3') }}" class="btn btn-primary">Submit</a>
+                    </form>
                     </div>
                 </div>
                 <!--End Center -->
