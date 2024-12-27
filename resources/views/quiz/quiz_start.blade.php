@@ -70,7 +70,7 @@
                             class="text-danger error">*</span></label>
                         <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" oninput="validateInput(this)" maxlength="10">
                         
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
                     </form>
                 </div>
                 </div>
@@ -109,38 +109,43 @@
                 { breakpoint: 576, settings: { slidesToShow: 1 } }
             ]
         });
-    });
 
-    // validation
-    $("#registrationForm").validate({
-        rules: {
-            name: {
-                required: true
+        // Form validation
+        $("#registrationForm").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                age: {
+                    required: true
+                },
+                mobile: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10
+                }
             },
-            age: {
-                required: true
+            messages: {
+                name: {
+                    required: "Name is required",
+                },
+                age: {
+                    required: "Age is required",
+                },
+                mobile: {
+                    required: "Mobile Number is required",
+                    digits: "Mobile Number must be digits only",
+                    minlength: "Mobile Number must be 10 digits",
+                    maxlength: "Mobile Number must be 10 digits"
+                }
             },
-            mobile: {
-                required: true,
-                digits: true,
-                minlength: 10,
-                maxlength: 10
+            submitHandler: function (form) {
+                // Disable the submit button after form submission
+                $("#submitButton").prop('disabled', true).text('Submitting...');
+                form.submit();
             }
-        },
-        messages: {
-            name: {
-                required: "Registration Number is required",
-            },
-            age: {
-                required: "Institute Name is required",
-            },
-            mobile: {
-                required: "Mobile Number is required",
-                digits: "Mobile Number must be digits only",
-                minlength: "Mobile Number must be 10 digits",
-                maxlength: "Mobile Number must be 10 digits"
-            }
-        }
+        });
     });
 </script>
 @endsection

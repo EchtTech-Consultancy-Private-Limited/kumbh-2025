@@ -18,5 +18,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/custom-style.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
     @yield('style')
 </head>

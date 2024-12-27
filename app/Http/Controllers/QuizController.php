@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -36,6 +37,13 @@ class QuizController extends Controller
     public function storeUser(Request $request)
     {
         try {
+            $existingUser = User::where('mobile_no', $request->input('mobile'))
+                            ->where('name', $request->input('name'))
+                            ->first();
+            if ($existingUser) {
+                \Toastr::error('The exam has already been submitted from this mobile and name number', 'Error');
+                return back()->with('error', 'The exam has already been submitted from this mobile number.');
+            }
             User::create([
                 'name' => $request->input('name'),
                 'age' => $request->input('age'),
@@ -47,7 +55,6 @@ class QuizController extends Controller
             return back()->with('error', 'An error occurred while saving the user details. Please try again.');
         }
     }
-
         
     /**
      *  @quizQuestion Question
