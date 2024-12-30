@@ -61,15 +61,21 @@
                         <label for="name">Name <span
                             class="text-danger error">*</span></label>
                         <input type="text" id="name" name="name" placeholder="Enter your name" oninput="validateInputChar(this)">
-                        
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         <label for="age">Age <span
                             class="text-danger error">*</span></label>
                         <input type="text" id="age" name="age" placeholder="Enter your age" oninput="validateInput(this)" maxlength="3">
-                        
+                        @error('age')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         <label for="mobile">Mobile Number <span
                             class="text-danger error">*</span></label>
                         <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" oninput="validateInput(this)" maxlength="10">
-                        
+                        @error('mobile')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
                     </form>
                 </div>

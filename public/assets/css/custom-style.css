@@ -14,6 +14,9 @@ label.error {
     color: red;
     font-size: x-small;
 }
+.invalid-feedback{
+    display: block !important;
+}
 
 body{
     
