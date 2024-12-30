@@ -36,6 +36,11 @@ class QuizController extends Controller
      */
     public function storeUser(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'age' => 'required|integer|min:1|max:150',
+            'mobile' => 'required|digits:10',
+        ]);
         try {
             $existingUser = User::where('mobile_no', $request->input('mobile'))
                             ->where('name', $request->input('name'))
