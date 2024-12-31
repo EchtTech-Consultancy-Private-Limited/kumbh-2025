@@ -92,7 +92,11 @@ class QuizController extends Controller
                 $correctCount++;
             }
         }
-        return view('quiz.quiz_certificate', compact('correctCount', 'user'));
+        if($correctCount >= 7){
+            return view('quiz.quiz_certificate', compact('correctCount', 'user'));
+        }else{
+            dd('Better Luck Next Time');
+        }
     }
         
     /**

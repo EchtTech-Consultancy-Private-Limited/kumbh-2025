@@ -97,9 +97,8 @@
                 <div class="col-md-6 certificate-box second-childd">
                     <div class="map height-fixed text-center">
                         {{$user}}
-                        {{$totalQuestions}}/
                         {{$correctCount}}
-                        <img src="{{ asset('assets/images/certificate.jpeg') }}">                     
+                        <img src="{{ asset('assets/images/certificate.jpeg') }}">
                     </div>
                 </div>
                 <!--End Center -->

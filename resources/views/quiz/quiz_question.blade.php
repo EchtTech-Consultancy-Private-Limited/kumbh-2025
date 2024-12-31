@@ -137,7 +137,6 @@
                 <!--End Left Side Banner -->
                 <!--Start Center -->
                 <div class="col-md-6 question-form second-childd">
-<<<<<<< HEAD
                     <div class="map height-fixed">
                         {{-- <h2 class="text-center">Quiz Questions</h2> --}}
                         <!-- Timer -->
@@ -179,48 +178,6 @@
                         </form>
                     </div>
                 </div>
-=======
-                <div class="map height-fixed">
-    <h2></h2>
-    <form action="#" method="post" class="quiz-form">
-        @csrf
-        @foreach ($questions as $index => $question)
-            <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
-            @php
-                // Decode the JSON options
-                $options = json_decode($question->options, true);
-            @endphp
-
-
-            <div class="option-box d-flex align-items-center">
-               
-            @if (is_array($options))
-                @foreach ($options as $key => $option)
-                    <div class="options d-flex align-items-center">
-                        <input 
-                            type="radio" 
-                            id="question{{ $index }}_{{ $key }}" 
-                            name="answers[{{ $question->id }}]" 
-                            value="{{ $option }}" 
-                            required
-                        >
-                        <label for="question{{ $index }}_{{ $key }}">{{ $option }}</label>
-                    </div>
-                @endforeach
-            @else
-                <p class="text-danger">Invalid options format for this question.</p>
-            @endif
-            </div>
-            <br>
-        @endforeach
-        <div class="submit-container">
-            <a href="{{ route('quizCerticate') }}" class="btn btn-primary">Submit</a>
-        </div>
-    </form>
-</div>
-
-    </div>
->>>>>>> d888ec9324faa823fb0f2daccb4ac6352a1d48ff
 
                 <!--End Center -->
                 <!--Start Right Side Banner -->
