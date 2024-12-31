@@ -13,6 +13,8 @@
 label.error {
     color: red;
     font-size: x-small;
+    margin-bottom: 15px;
+    margin-top: 0px;
 }
 .invalid-feedback{
     display: block !important;
@@ -22,7 +24,7 @@ body{
     
     overflow-x: hidden;
     font-family: 'Arial', sans-serif !important;
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
@@ -31,7 +33,7 @@ body{
     padding: 0;
 }
 .second-child {
-    margin-top: 15px !important;
+    /* margin-top: 15px !important; */
     margin-bottom: 12px;
 }
 
@@ -46,7 +48,7 @@ body{
 }
 .second-child .left-image img {
     width: 100%;
-    height: 506px;
+    height: 100%;
     object-fit: cover;
 }
 .left-image {
@@ -96,10 +98,11 @@ body{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 10px;
 } */
-.right-child {
+.right-child, .left-image {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 15px;
     border-radius: 5px;
+    background-color: #fff;
 }
 
 .height-fixed {
@@ -179,6 +182,16 @@ marquee {
     border: 2px solid #ffec2a;
     animation: drift 1s linear infinite, bg-color-change 1s linear infinite; /* Add background animation */
 }
+.col-md-6.second-childd .map {
+    background-color: #fff;
+    width: 100%;
+}
+.slick-track {
+    height: 100%;
+}
+.main-container.row.g-0 {
+    background-color: #f5f5f5;
+}
 
 /* Keyframes for background color change */
 @keyframes bg-color-change {
@@ -220,6 +233,68 @@ marquee {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.map a {
+    width: 100%;
+}
+.discription-box h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ec4809;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+    width: max-content;
+}
+.discription-box h6 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    border-bottom: 2px solid;
+    padding: 5px 10px;
+    width: max-content;
+    background-color: #ffff7e;
+}
+.discription-box p, .discription-box li{
+    font-size: 12px;
+}
+.row.g-3.mx-3.second-child-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.col-md-6.second-childd .map.login-form {
+    background-color: unset;
+    width: 100%;
+}
+.col-md-6.second-childd .map.login-form form{
+    background-color: #fff;
+    height: 100%;
+}
+.text-center.col-md-6.second-childd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.question-form .map.height-fixed {
+    position: relative;
+}
+.question-form .map.height-fixed a {
+    position: absolute;
+    width: auto;
+    bottom: 15px;
+}
+.question-form .map.height-fixed form label {
+    font-size: 15px;
+}
+.question-form .map.height-fixed form input {
+    font-size: 14px;
+}
+.certificate-box .map.height-fixed.text-center {
+    padding: 20px;
+}
+.certificate-box img {
+    width: auto;
+    height: 100%;
 }
 
 @media (max-width:1299px) {
@@ -301,7 +376,7 @@ marquee {
         min-height: 1px;
     }
     .right-child.height-fixed {
-        height: 760px;
+        height: auto;
     }
     .right-child.height-fixed {
         display: flex;
@@ -383,6 +458,15 @@ marquee {
     }
     .bottom-image {
         height: 45%;
+    }
+    .discription-box h5 {
+        font-size: 14px;
+    }
+    .discription-box p, .discription-box li {
+        font-size: 12px;
+    }
+    .discription-box h6 {
+        font-size: 13px;
     }
 }
 
