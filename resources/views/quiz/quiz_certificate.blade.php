@@ -1,164 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('assets/css/custom-style.css')}}">
-    <title>Allahabad Kumbh</title>
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-
-    <!-- Slick JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style>
+@extends('layouts.master')
+@section('style')
+<style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
-    form {
-      max-width: 400px;
-      margin: auto;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .certificate-container {
+        position: relative;
+        width: 800px;
+        height: 570px;
+        background-image: url("{{ asset('assets/images/certificate.png') }}");
+        background-size: cover;
+        background-position: center;
     }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    input[type="text"], input[type="tel"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #007BFF;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
 
-<body>
-    <div class="main-container row g-0">
-        <div class="logo-header">
-            <div class="left-logo">
-                <img src="{{asset('assets/images/logo-1.jpg')}}" alt="">
-            </div>
-            <!-- <div class="middle">
-                <marquee behavior="" direction="left">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Cupiditate recusandae tenetur doloremque aspernatur earum molestias.</marquee>
-            </div> -->
-            <div class="right-logo">
-                <img src="{{asset('assets/images/logo-2.jpeg')}}" alt="">
+    .logos {
+        text-align: center;
+    }
+
+    .logos img {
+        width: 70px;
+    }
+
+    .logos img:first-child {
+        border-right: 1px solid #333;
+    }
+
+    .logos img:first-child {
+        border-right: 2px solid #e1ae7b;
+        padding-right: 10px;
+    }
+
+    .logos img:not(:first-child) {
+        padding-left: 5px;
+    }
+
+    .content-box {
+        padding: 55px 45px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .devider-text {
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .main-text {
+        color: #f53c3c;
+        margin-top: 8px;
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        text-align: center;
+        color: #333;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .text-first {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span.dynamic-text {
+        border-bottom: 2px dotted #333;
+        width: 250px;
+        display: block;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .bottom-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .date-box {
+        font-size: 12px;
+        margin-right: 160px;
+        text-align: center;
+    }
+
+    .date-dymanic {
+        border-bottom: 2px solid #999595;
+        width: 116px;
+        display: block;
+        font-weight: 600;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .signature-box {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .signature-box img {
+        width: 116px;
+        height: 40px;
+        border-bottom: 2px solid #999595;
+        padding-bottom: 3px;
+        margin-bottom: 2px;
+        object-fit: contain;
+    }
+
+    .sign-text {
+        font-size: 12px;
+        line-height: 19px;
+    }
+</style>
+@endsection
+@section('content')
+<div class="second-child container-fluid my-4">
+    <div class="row g-3 mx-3 second-child-box">
+        <div class="col-md-3 first-childd">
+            <div class="left-image height-fixed">
+                <div class="my-slider">
+                    <div class="img-slider"><img src="{{asset('assets/images/left-side.jpg')}}" alt="Left Side Image 1" class="img-fluid"></div>
+                    <div class="img-slider"><img src="{{asset('assets/images/left-side1.jpg')}}" alt="Left Side Image 2" class="img-fluid"></div>
+                    <div class="img-slider"><img src="{{asset('assets/images/left-side2.jpg')}}" alt="Left Side Image 3" class="img-fluid"></div>
+                    <div class="img-slider"><img src="{{asset('assets/images/left-img-3.jpg')}}" alt="Left Side Image 4" class="img-fluid"></div>
+                </div>
             </div>
         </div>
-        <div class="col-md-12 first-child">
-            <div class="banner">
-                <img src="{{asset('assets/images/Banner.jpg')}}" alt="">
-            </div>
-        </div>
-        <div class="second-child container-fluid my-4">
-            <div class="row g-3 mx-3 second-child-box">
-                <!--Start Left Side Banner -->
-                <div class="col-md-3 first-childd">
-                    <div class="left-image height-fixed">
+        
+        <div class="text-center col-md-6 second-childd">
+            <div class="certificate-container">
+                <div class="content-box">
+                    <div class="logos">
+                        <img src="{{asset('assets/images/mahakumbh.png')}}" alt="">
+                        <img src="{{asset('assets/images/Seal_of_Uttar_Pradesh.svg')}}" alt="">
+                    </div>
+                    <div class="text-box">
+                        <h2>उत्तर प्रदेश राज्य पुरातत्व निदेशालय</h2>
+                        <div class="devider-text">द्वारा</div>
+                        <h2 class="main-text">महाकुम्भ प्रयागराज - 2025 महोत्सव के अन्तर्गत</h2>
+                        <p class="text-first">प्रमाणित किया जाता है कि सुश्री / श्री <span class="dynamic-text">
+                                {{ $user }}</span> ने </p>
+                        <p>'महाकुम्भ प्रयागराज 2025 महोत्सव' के अन्तर्गत आयोजित ऑन द स्पॉट प्रश्नोत्तरी प्रतियोगिता में प्रतिभाग
+                            किया। </p>
+                        <p>राज्य पुरातत्व निदेशालय इनके उज्ज्वल भविष्य की कामना करता है।</p>
+                        <div class="bottom-box">
+                            <div class="date-box">
+                                <div class="date-dymanic">{{ now()->format('d-m-Y') }}</div>
+                                <div>दिनांक</div>
+                            </div>
 
-                        <div class="wrapper">
-                            <div class="my-slider">
-                                <div class="img-slider"><img src="{{asset('assets/images/left-side.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/left-side1.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/left-side2.jpg')}}" alt=""></div>
-                                <div class="img-slider"><img src="{{asset('assets/images/left-img-3.jpg')}}" alt=""></div>
+                            <div class="signature-box">
+                                <img src="{{asset('assets/images/sign.png')}}" alt="">
+                                <div class="sign-text">
+                                    <div>रेनू द्विवेदी</div>
+                                    <div>निदेशक</div>
+                                    <div>उत्तर प्रदेश राज्य पुरातत्व निदेशालय, लखनऊ</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--End Left Side Banner -->
-                <!--Start Center -->
-                <div class="col-md-6 certificate-box second-childd">
-                    <div class="map height-fixed text-center">
-                        {{$user}}
-                        {{$correctCount}}
-                        <img src="{{ asset('assets/images/certificate.jpeg') }}">
-                    </div>
-                </div>
-                <!--End Center -->
-                <!--Start Right Side Banner -->
-                <div class="col-md-3 right third-childd">
-                    <div class="discription-box right-child height-fixed">
-                        <section>
-                            <h5>कुम्भ मेले के बारे में!</h5>
-                            <p>कुम्भ मेला देश में एक केंद्रीय आध्यात्मिक भूमिका निभाता है...</p>
-                            <h6>मुख्य!</h6>
-                            <ul>
-                                <li>कुम्भ मेला हिंदू धर्म का सबसे बड़ा मेला होता है।</li>
-                                <li>इस मेले को हर तीन साल में एक नये स्थान पर आयोजित किया जाता है।</li>
-                            </ul>
-                            <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
-                            <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत...</p>
-                        </section>
-                    </div>
-                </div>
-                <!--End Right Side Banner -->
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2025 UP State Archaeology Department All rights reserved.</p>
+        <div class="col-md-3 right third-childd">
+            <div class="discription-box right-child height-fixed">
+                <section>
+                    <h5>कुम्भ मेले के बारे में!</h5>
+                    <p>कुम्भ मेला देश में एक केंद्रीय आध्यात्मिक भूमिका निभाता है...</p>
+                    <h6>मुख्य!</h6>
+                    <ul>
+                        <li>कुम्भ मेला हिंदू धर्म का सबसे बड़ा मेला होता है।</li>
+                        <li>इस मेले को हर तीन साल में एक नये स्थान पर आयोजित किया जाता है।</li>
+                    </ul>
+                    <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
+                    <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत...</p>
+                </section>
             </div>
-        </footer>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    <script>
-        function getForm(){
-            alert()
-            document.getElementById('imageShow').style.visibility='hidden';
-        }
-    $(document).ready(function() {
-        $('.my-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: false,
-            speed: 500,
-            infinite: true,
-            autoplaySpeed: 2000,
-            autoplay: true,
-            responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                    }
+</div>
+@section('script')
+<script>
+$(document).ready(function() {
+    $('.my-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        speed: 500,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
                 }
-            ]
-        });
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
-    </script>
-</body>
+
+});
+</script>
+@endsection
+@endsection
