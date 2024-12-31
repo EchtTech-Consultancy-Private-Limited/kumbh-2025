@@ -23,6 +23,7 @@ Route::get('/', [QuizController::class, 'homePage'])->name('home');
 Route::get('/quiz-start', [QuizController::class, 'quizStart'])->name('quizStart');
 Route::post('/user-store', [QuizController::class, 'storeUser'])->name('storeUser');
 Route::get('/quiz-question', [QuizController::class, 'quizQuestion'])->name('quizQuestion');
+Route::post('/check-quiz', [QuizController::class, 'checkQuiz'])->name('checkQuiz');
 Route::get('/quiz-certificate', [QuizController::class, 'quizCerticate'])->name('quizCerticate');
 // End Quiz routes
 

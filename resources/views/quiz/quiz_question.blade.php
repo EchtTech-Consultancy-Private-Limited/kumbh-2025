@@ -80,6 +80,14 @@
     width: 100%; /* Optional: make the button full width */
 }
 
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
   </style>
 </head>
 
@@ -121,42 +129,47 @@
                 <!--End Left Side Banner -->
                 <!--Start Center -->
                 <div class="col-md-6 question-form second-childd">
-                <div class="map height-fixed">
-    <h2></h2>
-    <form action="#" method="post" class="quiz-form">
-        @csrf
-        @foreach ($questions as $index => $question)
-            <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
-            @php
-                // Decode the JSON options
-                $options = json_decode($question->options, true);
-            @endphp
-
-            @if (is_array($options))
-                @foreach ($options as $key => $option)
-                    <div>
-                        <input 
-                            type="radio" 
-                            id="question{{ $index }}_{{ $key }}" 
-                            name="answers[{{ $question->id }}]" 
-                            value="{{ $option }}" 
-                            required
-                        >
-                        <label for="question{{ $index }}_{{ $key }}">{{ $option }}</label>
+                    <div class="map height-fixed">
+                        {{-- <h2 class="text-center">Quiz Questions</h2> --}}
+                        <!-- Timer -->
+                        <div id="timer" class="text-center mb-3" style="font-size: 18px; font-weight: bold; color: red;">
+                            Time Remaining: 05:00
+                        </div>
+                        <!-- Quiz Form -->
+                        <form id="quizForm" action="{{ route('checkQuiz') }}" method="post" class="quiz-form">
+                            @csrf
+                            <input type="text" name="user" value="{{ @$user->name }}">
+                            @foreach ($questions as $index => $question)
+                                <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
+                                @php
+                                    // Decode the JSON options
+                                    $options = json_decode($question->options, true);
+                                @endphp
+                
+                                @if (is_array($options))
+                                    @foreach ($options as $key => $option)
+                                        <div>
+                                            <input 
+                                                type="radio" 
+                                                id="question{{ $index }}_{{ $key }}" 
+                                                name="answers[{{ $question->id }}]" 
+                                                value="{{ $option }}" 
+                                                required
+                                            >
+                                            <label for="question{{ $index }}_{{ $key }}">{{ $option }}</label>
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <p class="text-danger">Invalid options format for this question.</p>
+                                @endif
+                                <br>
+                            @endforeach
+                            <div class="submit-container">
+                                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            </div>
+                        </form>
                     </div>
-                @endforeach
-            @else
-                <p class="text-danger">Invalid options format for this question.</p>
-            @endif
-            <br>
-        @endforeach
-        <div class="submit-container">
-            <a href="{{ route('quizCerticate') }}" class="btn btn-primary">Submit</a>
-        </div>
-    </form>
-</div>
-
-    </div>
+                </div>
 
                 <!--End Center -->
                 <!--Start Right Side Banner -->
@@ -216,6 +229,34 @@
                 }
             ]
         });
+    });
+
+    // timer
+    document.addEventListener('DOMContentLoaded', function () {
+        // Timer functionality
+        const timerElement = document.getElementById('timer');
+        const quizForm = document.getElementById('quizForm');
+
+        let timeRemaining = 300; // 5 minutes in seconds
+
+        const updateTimerDisplay = () => {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            timerElement.textContent = `Time Remaining: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        };
+
+        const countdown = setInterval(() => {
+            timeRemaining -= 1;
+            updateTimerDisplay();
+
+            if (timeRemaining <= 0) {
+                clearInterval(countdown);
+                alert('Time is up! The form will now be submitted.');
+                quizForm.submit(); // Automatically submit the form
+            }
+        }, 1000);
+
+        updateTimerDisplay(); // Initialize the timer display
     });
     </script>
 </body>

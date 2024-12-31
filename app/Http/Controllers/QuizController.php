@@ -50,7 +50,7 @@ class QuizController extends Controller
                 \Toastr::error('The exam has already been submitted from this mobile and name number', 'Error');
                 return back()->with('error', 'The exam has already been submitted from this mobile number.');
             }
-            User::create([
+            $user = User::create([
                 'name' => $request->input('name'),
                 'age' => $request->input('age'),
                 'mobile_no' => $request->input('mobile'),
@@ -59,7 +59,7 @@ class QuizController extends Controller
             $questions = Oex_question_master::inRandomOrder()->take(10)->get();
             // End Get Question
 
-            return view('quiz.quiz_question',compact('questions'))->with('success', 'User details saved successfully!');
+            return view('quiz.quiz_question',compact('questions', 'user'))->with('success', 'User details saved successfully!');
         } catch (\Exception $e) {
             \Log::error('Error saving user: ' . $e->getMessage());
             return back()->with('error', 'An error occurred while saving the user details. Please try again.');
@@ -74,6 +74,25 @@ class QuizController extends Controller
     public function quizQuestion()
     {
         return view('quiz.quiz_question');
+    }
+
+    public function checkQuiz(Request $request)
+    {
+        // Retrieve submitted answers
+        $user = $request->user ?? '';
+        $submittedAnswers = $request->input('answers', []);
+        $questions = Oex_question_master::all();
+
+        $correctCount = 0;
+        foreach ($questions as $question) {
+            $correctAnswer = $question->ans; // Correct answer stored in the 'ans' column
+            $submittedAnswer = $submittedAnswers[$question->id] ?? null;
+
+            if ($submittedAnswer === $correctAnswer) {
+                $correctCount++;
+            }
+        }
+        return view('quiz.quiz_certificate', compact('correctCount', 'user'));
     }
         
     /**
