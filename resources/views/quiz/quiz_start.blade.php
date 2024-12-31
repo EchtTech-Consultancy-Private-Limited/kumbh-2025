@@ -109,40 +109,6 @@ button:hover {
 </div>
 @section('script')
 <script>
-<<<<<<< HEAD
-    $(document).ready(function () {
-        $('.my-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: false,
-            speed: 500,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            responsive: [
-                { breakpoint: 768, settings: { slidesToShow: 1 } },
-                { breakpoint: 576, settings: { slidesToShow: 1 } }
-            ]
-        });
-
-        // Form validation
-        $("#registrationForm").validate({
-            rules: {
-                name: {
-                    required: true
-                },
-                age: {
-                    required: true,
-                    minlength: 2,
-                    maxlength: 3
-                },
-                mobile: {
-                    required: true,
-                    digits: true,
-                    minlength: 10,
-                    maxlength: 10
-=======
 $(document).ready(function() {
     $('.my-slider').slick({
         slidesToShow: 1,
@@ -157,7 +123,6 @@ $(document).ready(function() {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 1
->>>>>>> 81730b2e114bfa7acadf6189443a707eab92e0df
                 }
             },
             {

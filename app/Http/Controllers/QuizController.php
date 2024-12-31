@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oex_question_master;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
@@ -54,7 +55,11 @@ class QuizController extends Controller
                 'age' => $request->input('age'),
                 'mobile_no' => $request->input('mobile'),
             ]);
-            return view('quiz.quiz_question')->with('success', 'User details saved successfully!');
+            // Get Questions ramdon 10 question
+            $questions = Oex_question_master::inRandomOrder()->take(10)->get();
+            // End Get Question
+
+            return view('quiz.quiz_question',compact('questions'))->with('success', 'User details saved successfully!');
         } catch (\Exception $e) {
             \Log::error('Error saving user: ' . $e->getMessage());
             return back()->with('error', 'An error occurred while saving the user details. Please try again.');

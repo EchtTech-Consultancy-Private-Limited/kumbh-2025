@@ -100,27 +100,35 @@
                 <div class="col-md-6 question-form second-childd">
                     <div class="map height-fixed">
                     <h2></h2>
-                    <form action="/submit" method="post">
-                        <label for="name">Q:1 कर्दमेश्वर महादेव मंदिर कहाँ स्थित है?</label>
-                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> वाराणसी
-                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> अयोध्या
-                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> प्रयागराज
-                        <input type="radio" id="name1" name="name1" placeholder="Enter your name"> मथुरा
-                        <br><br>
-                        <label for="name">Q:2  कर्दमेश्वर महादेव मंदिर किस देवता को समर्पित है?</label>
-                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> भगवान विष्णु
-                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> भगवान शिव
-                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> भगवान कृष्ण
-                        <input type="radio" id="name2" name="name2" placeholder="Enter your name"> देवी दुर्गा
-                        <br><br>
-                        <label for="name">Q:3  कर्दमेश्वर महादेव मंदिर का संबंध किस नदी से है?</label>
-                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> गंगा
-                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> यमुना
-                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> सरस्वती
-                        <input type="radio" id="name3" name="name3" placeholder="Enter your name"> गोमती
-                       
-                        <br><br>
+                    <form action="#" method="post">
+                        @csrf
+                        @foreach ($questions as $index => $question)
+                            <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
+                            @php
+                                // Decode the JSON options
+                                $options = json_decode($question->options, true);
+                            @endphp
+                    
+                            @if (is_array($options))
+                                @foreach ($options as $key => $option)
+                                    <div>
+                                        <input 
+                                            type="radio" 
+                                            id="question{{ $index }}_{{ $key }}" 
+                                            name="answers[{{ $question->id }}]" 
+                                            value="{{ $option }}" 
+                                            required
+                                        >
+                                        <label for="question{{ $index }}_{{ $key }}">{{ $option }}</label>
+                                    </div>
+                                @endforeach
+                            @else
+                                <p class="text-danger">Invalid options format for this question.</p>
+                            @endif
+                            <br>
+                        @endforeach
                         <a href="{{ route('quizCerticate') }}" class="btn btn-primary">Submit</a>
+                        {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
                     </form>
                     </div>
                 </div>
