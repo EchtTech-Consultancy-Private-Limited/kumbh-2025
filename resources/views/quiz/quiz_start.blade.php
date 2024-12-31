@@ -123,7 +123,9 @@
                     required: true
                 },
                 age: {
-                    required: true
+                    required: true,
+                    minlength: 2,
+                    maxlength: 3
                 },
                 mobile: {
                     required: true,
