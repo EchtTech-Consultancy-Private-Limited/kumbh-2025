@@ -136,8 +136,7 @@
                     <div class="img-slider"><img src="{{asset('assets/images/left-img-3.jpg')}}" alt="Left Side Image 4" class="img-fluid"></div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div class="text-center col-md-6 second-childd">
             <div class="certificate-container">
                 <div class="content-box">
@@ -186,7 +185,8 @@
                     <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
                     <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत...</p>
                 </section>
-            </div>
+            </div><br><br>
+            <a href="{{ route('homePage') }}" class="btn btn-primary" id="submitLink" role="button">New Quiz Start</a>
         </div>
     </div>
 </div>

@@ -46,7 +46,7 @@
       border-radius: 4px;
     }
     button {
-      background-color: #007BFF;
+      background-color: ##955152;
       color: #fff;
       padding: 10px 15px;
       border: none;
@@ -141,7 +141,7 @@
                         {{-- <h2 class="text-center">Quiz Questions</h2> --}}
                         <!-- Timer -->
                          <div class="user-timer-box">
-                            <h5>{{ @$user->name }}</h5>
+                            <h5>उत्तर प्रदेश राज्य पुरातत्व निदेशालय ( {{ @$user->name }} )</h5>
                             <div id="timer" class="text-center mb-3" style="font-size: 15px; font-weight: bold; color: red;">
                                 Time Remaining: 05:00
                             </div>
@@ -150,7 +150,7 @@
                         <!-- Quiz Form -->
                         <form id="quizForm" action="{{ route('checkQuiz') }}" method="post" class="quiz-form">
                             @csrf
-                            
+                            <input type="hidden" value="{{ @$user->name }}" name="user">
                             @foreach ($questions as $index => $question)
                                 <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
                                 @php
@@ -179,7 +179,7 @@
                                 <br>
                             @endforeach
                             <div class="submit-container">
-                                <a type="submit" class="btn btn-primary">Submit</a>
+                                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
                             </div>
                         </form>
                     </div>

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Quiz routes
-Route::get('/', [QuizController::class, 'homePage'])->name('home');
+Route::get('/', [QuizController::class, 'homePage'])->name('homePage');
 Route::get('/quiz-start', [QuizController::class, 'quizStart'])->name('quizStart');
 Route::post('/user-store', [QuizController::class, 'storeUser'])->name('storeUser');
 Route::get('/quiz-question', [QuizController::class, 'quizQuestion'])->name('quizQuestion');
