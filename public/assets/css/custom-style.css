@@ -323,6 +323,34 @@ div#timer {
     align-items: center;
     justify-content: flex-end;
 }
+.user-timer-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 101;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e7e7e7;
+
+}
+.question-form .map.height-fixed {
+    padding-right: 0;
+}
+.user-timer-box h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+div#timer {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+    padding: 0px;
+    margin: 0 !important;
+}
 @media (max-width:1299px) {
     .map img {
         width: auto;

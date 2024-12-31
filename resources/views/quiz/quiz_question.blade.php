@@ -140,13 +140,17 @@
                     <div class="map height-fixed">
                         {{-- <h2 class="text-center">Quiz Questions</h2> --}}
                         <!-- Timer -->
-                        <div id="timer" class="text-center mb-3" style="font-size: 18px; font-weight: bold; color: red;">
-                            Time Remaining: 05:00
+                         <div class="user-timer-box">
+                            <h5>{{ @$user->name }}</h5>
+                            <div id="timer" class="text-center mb-3" style="font-size: 15px; font-weight: bold; color: red;">
+                                Time Remaining: 05:00
+                            </div>
+                            
                         </div>
                         <!-- Quiz Form -->
                         <form id="quizForm" action="{{ route('checkQuiz') }}" method="post" class="quiz-form">
                             @csrf
-                            <input type="text" name="user" value="{{ @$user->name }}">
+                            
                             @foreach ($questions as $index => $question)
                                 <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
                                 @php
