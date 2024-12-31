@@ -25,12 +25,12 @@
     }
     form {
       /* max-width: 400px; */
-      height: 100%;
+      height: auto;
       margin: auto;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /* border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
       font-size: 14px;
     }
     label {
@@ -69,7 +69,7 @@
 }
 
 .submit-container {
-    position: sticky;
+  
     bottom: 0; /* Stick the button to the bottom */
     width: 100%; /* Ensures the button stays within the container width */
     background-color: white; /* Optional: make the background white */
@@ -78,6 +78,14 @@
 
 .submit-container .btn-primary {
     width: 100%; /* Optional: make the button full width */
+}
+.option-box .options {
+    margin-left: 20px;
+}
+.option-box .options label {
+    margin-bottom: 0;
+    margin-left: 5px;
+    font-weight: 500;
 }
 
   </style>
@@ -132,9 +140,12 @@
                 $options = json_decode($question->options, true);
             @endphp
 
+
+            <div class="option-box d-flex align-items-center">
+               
             @if (is_array($options))
                 @foreach ($options as $key => $option)
-                    <div>
+                    <div class="options d-flex align-items-center">
                         <input 
                             type="radio" 
                             id="question{{ $index }}_{{ $key }}" 
@@ -148,6 +159,7 @@
             @else
                 <p class="text-danger">Invalid options format for this question.</p>
             @endif
+            </div>
             <br>
         @endforeach
         <div class="submit-container">
