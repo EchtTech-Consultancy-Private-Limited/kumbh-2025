@@ -57,6 +57,29 @@
     button:hover {
       background-color: #0056b3;
     }
+    .height-fixed {
+    max-height: 500px; /* Set max height for the map container */
+    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+    padding-right: 15px; /* Optional: prevents the scrollbar from overlapping */
+    position: relative;
+}
+
+.quiz-form {
+    position: relative; /* Keeps the form in its normal flow */
+}
+
+.submit-container {
+    position: sticky;
+    bottom: 0; /* Stick the button to the bottom */
+    width: 100%; /* Ensures the button stays within the container width */
+    background-color: white; /* Optional: make the background white */
+    padding: 10px; /* Optional: add some padding */
+}
+
+.submit-container .btn-primary {
+    width: 100%; /* Optional: make the button full width */
+}
+
   </style>
 </head>
 
@@ -98,40 +121,43 @@
                 <!--End Left Side Banner -->
                 <!--Start Center -->
                 <div class="col-md-6 question-form second-childd">
-                    <div class="map height-fixed">
-                    <h2></h2>
-                    <form action="#" method="post">
-                        @csrf
-                        @foreach ($questions as $index => $question)
-                            <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
-                            @php
-                                // Decode the JSON options
-                                $options = json_decode($question->options, true);
-                            @endphp
-                    
-                            @if (is_array($options))
-                                @foreach ($options as $key => $option)
-                                    <div>
-                                        <input 
-                                            type="radio" 
-                                            id="question{{ $index }}_{{ $key }}" 
-                                            name="answers[{{ $question->id }}]" 
-                                            value="{{ $option }}" 
-                                            required
-                                        >
-                                        <label for="question{{ $index }}_{{ $key }}">{{ $option }}</label>
-                                    </div>
-                                @endforeach
-                            @else
-                                <p class="text-danger">Invalid options format for this question.</p>
-                            @endif
-                            <br>
-                        @endforeach
-                        <a href="{{ route('quizCerticate') }}" class="btn btn-primary">Submit</a>
-                        {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
-                    </form>
+                <div class="map height-fixed">
+    <h2></h2>
+    <form action="#" method="post" class="quiz-form">
+        @csrf
+        @foreach ($questions as $index => $question)
+            <label for="question{{ $index }}">Q:{{ $index + 1 }} {{ $question->questions }}</label>
+            @php
+                // Decode the JSON options
+                $options = json_decode($question->options, true);
+            @endphp
+
+            @if (is_array($options))
+                @foreach ($options as $key => $option)
+                    <div>
+                        <input 
+                            type="radio" 
+                            id="question{{ $index }}_{{ $key }}" 
+                            name="answers[{{ $question->id }}]" 
+                            value="{{ $option }}" 
+                            required
+                        >
+                        <label for="question{{ $index }}_{{ $key }}">{{ $option }}</label>
                     </div>
-                </div>
+                @endforeach
+            @else
+                <p class="text-danger">Invalid options format for this question.</p>
+            @endif
+            <br>
+        @endforeach
+        <div class="submit-container">
+            <a href="{{ route('quizCerticate') }}" class="btn btn-primary">Submit</a>
+        </div>
+    </form>
+</div>
+
+    </div>
+
                 <!--End Center -->
                 <!--Start Right Side Banner -->
                 <div class="col-md-3 right third-childd">
