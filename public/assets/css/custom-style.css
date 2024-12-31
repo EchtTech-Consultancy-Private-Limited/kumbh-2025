@@ -277,11 +277,18 @@ marquee {
 }
 .question-form .map.height-fixed {
     position: relative;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .question-form .map.height-fixed a {
     position: absolute;
     width: auto;
     bottom: 15px;
+    right: 20px;
+    background-color: #975454;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .question-form .map.height-fixed form label {
     font-size: 15px;
@@ -296,7 +303,10 @@ marquee {
     width: auto;
     height: 100%;
 }
-
+.login-form button#submitButton {
+    background-color: #955152;
+    border: none;
+}
 @media (max-width:1299px) {
     .map img {
         width: auto;
