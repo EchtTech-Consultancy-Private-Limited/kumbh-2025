@@ -307,6 +307,22 @@ marquee {
     background-color: #955152;
     border: none;
 }
+div#timer {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+    padding: 10px;
+}
+.submit-container {
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 @media (max-width:1299px) {
     .map img {
         width: auto;
