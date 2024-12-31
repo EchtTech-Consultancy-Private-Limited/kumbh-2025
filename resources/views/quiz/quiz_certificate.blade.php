@@ -76,8 +76,8 @@
                 <img src="{{asset('assets/images/Banner.jpg')}}" alt="">
             </div>
         </div>
-        <div class="second-child">
-            <div class="row g-0 mx-3 second-child-box">
+        <div class="second-child container-fluid my-4">
+            <div class="row g-3 mx-3 second-child-box">
                 <!--Start Left Side Banner -->
                 <div class="col-md-3 first-childd">
                     <div class="left-image height-fixed">
@@ -94,7 +94,7 @@
                 </div>
                 <!--End Left Side Banner -->
                 <!--Start Center -->
-                <div class="col-md-6 second-childd">
+                <div class="col-md-6 certificate-box second-childd">
                     <div class="map height-fixed text-center">
                         <img src="{{ asset('assets/images/certificate.jpeg') }}">                     
                     </div>
@@ -102,34 +102,18 @@
                 <!--End Center -->
                 <!--Start Right Side Banner -->
                 <div class="col-md-3 right third-childd">
-                    <div class="right-child height-fixed">
-                        <div class="discrittion-box">
-                            <section>
-                                <h5>कुम्भ मेले के बारे में!</h5>
-                                <p>
-                                    कुम्भ मेला देश में एक केंद्रीय आध्यात्मिक भूमिका निभाता है, जो आम भारतीयों पर एक मंत्रमुग्ध प्रभाव डालता है। यह आयोजन खगोल विज्ञान, ज्योतिष, आध्यात्मिकता, अनुष्ठानिक परंपराओं और सामाजिक और सांस्कृतिक रीति-रिवाजों और प्रथाओं के विज्ञान को समाहित करता है, जिससे यह ज्ञान में बेहद समृद्ध है।
-                                </p>
-
-                                <h6>मुख्य!</h6>
-                                <ul>
-                                    <li>कुम्भ मेला हिंदू धर्म का सबसे बड़ा मेला होता है।</li>
-                                    <li>इस मेले को हर तीन साल में एक नये स्थान पर आयोजित किया जाता है। </li>
-                                    <!-- <li>Spiritual discourses and cultural performances</li> -->
-                                </ul>
-                                <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
-                            <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत को संरक्षित करके वर्तमान को अतीत से जोड़ना और इसे आस्था आधारित पर्यटन के वैश्विक केंद्र के रूप में बढ़ावा देता है!</p>
-                            </section>
-                        </div>
-                        <div class="bottom-image">
-                            <!-- <div class="wrapper">
-                                <div class="my-slider">
-                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img.jpg')}}"
-                                            alt=""></div>
-                                    <div class="img-slider"><img src="{{asset('assets/images/right-bottom-img-1.jpg')}}"
-                                            alt=""></div>
-                                </div>
-                            </div> -->
-                        </div>
+                    <div class="discription-box right-child height-fixed">
+                        <section>
+                            <h5>कुम्भ मेले के बारे में!</h5>
+                            <p>कुम्भ मेला देश में एक केंद्रीय आध्यात्मिक भूमिका निभाता है...</p>
+                            <h6>मुख्य!</h6>
+                            <ul>
+                                <li>कुम्भ मेला हिंदू धर्म का सबसे बड़ा मेला होता है।</li>
+                                <li>इस मेले को हर तीन साल में एक नये स्थान पर आयोजित किया जाता है।</li>
+                            </ul>
+                            <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
+                            <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत...</p>
+                        </section>
                     </div>
                 </div>
                 <!--End Right Side Banner -->
