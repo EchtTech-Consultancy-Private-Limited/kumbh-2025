@@ -304,7 +304,7 @@ marquee {
     height: 100%;
 }
 .login-form button#submitButton {
-    background-color: #955152;
+    background-color: #ec4809;
     border: none;
 }
 div#timer {
@@ -350,6 +350,10 @@ div#timer {
     z-index: 100;
     padding: 0px;
     margin: 0 !important;
+}
+.submit-container button#submitButton {
+    background-color: #ec4809;
+    border: none;
 }
 @media (max-width:1299px) {
     .map img {
