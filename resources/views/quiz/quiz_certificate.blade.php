@@ -186,7 +186,7 @@
                             </div>
 
                             <div class="signature-box">
-                                <img src="{{asset('assets/images/sign.png')}}" alt="">
+                                <img src="{{asset('assets/images/sign_dic.png')}}" alt="">
                                 <div class="sign-text">
                                     <div>रेनू द्विवेदी</div>
                                     <div>निदेशक</div>

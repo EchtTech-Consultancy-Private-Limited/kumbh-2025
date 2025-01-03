@@ -56,7 +56,8 @@ class QuizController extends Controller
                 'mobile_no' => $request->input('mobile'),
             ]);
             // Get Questions ramdon 10 question
-            $questions = Oex_question_master::inRandomOrder()->take(10)->get();
+            $exam_id = $request->input('age') <= 14 ? 1 : 3;
+            $questions = Oex_question_master::where('exam_id', $exam_id )->inRandomOrder()->take(10)->get();
             // End Get Question
 
             return view('quiz.quiz_question',compact('questions', 'user'))->with('success', 'User details saved successfully!');
@@ -92,11 +93,11 @@ class QuizController extends Controller
                 $correctCount++;
             }
         }
-        // if($correctCount >= 7){
+        if($correctCount >= 7){
             return view('quiz.quiz_certificate', compact('correctCount', 'user'));
-        // }else{
-        //     return view('quiz.quiz_fail', compact('correctCount', 'user'));
-        // }
+        }else{
+            return view('quiz.quiz_fail', compact('correctCount', 'user'));
+        }
     }
         
     /**
