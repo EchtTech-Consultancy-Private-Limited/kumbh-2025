@@ -306,6 +306,7 @@ marquee {
 .login-form button#submitButton {
     background-color: #ec4809;
     border: none;
+    margin-top: 20px;
 }
 div#timer {
     position: sticky;
