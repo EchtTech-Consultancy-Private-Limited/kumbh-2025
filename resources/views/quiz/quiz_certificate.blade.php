@@ -7,65 +7,65 @@
     }
     .certificate-container {
         position: relative;
-        width: 800px;
-        height: 570px;
+        width: 100%;
+        /* height: 570px; */
         /* background-image: url("{{ asset('assets/images/certificate.png') }}"); */
         background-size: cover;
         background-position: center;
     }
 
-    .certificate-container .logos {
+     .logos {
         text-align: center;
         margin-bottom: 12px;
     }
 
-    .certificate-container .logos img {
+     .logos img {
         width: 70px;
     }
 
-    .certificate-container .logos img:first-child {
+     .logos img:first-child {
         border-right: 1px solid #333;
     }
 
-    .certificate-container .logos img:first-child {
+     .logos img:first-child {
         border-right: 2px solid #e1ae7b;
         padding-right: 10px;
     }
 
-    .certificate-container .logos img:not(:first-child) {
+     .logos img:not(:first-child) {
         padding-left: 5px;
     }
 
-    .certificate-container .content-box {
-            padding: 32px 40px;
+     .content-box {
+            padding: 45px 40px;
             z-index: 9;
             position: relative;
         }
 
-        .certificate-container img.bg-image {
+         img.bg-image {
             width: 100%;
-            height: auto;
+            height: 500px;
             position: absolute;
             z-index: 1;
             left: 0;
             top: 0;
         }
 
-        .certificate-container h2 {
+         h2 {
         text-align: center;
         color: #333;
         margin-bottom: 15px;
         font-size: 26px
     }
 
-    .certificate-container .devider-text {
+     .devider-text {
         font-size: 18px;
         color: #333;
         text-align: center;
         font-weight: 500;
     }
 
-    .certificate-container .main-text {
+     .main-text {
         color: #f53c3c;
         margin-top: 8px;
         text-align: center;
@@ -73,20 +73,20 @@
         margin-bottom: 18px;
     }
 
-    .certificate-container p {
+    .text-box p {
         text-align: center;
         color: #333;
         font-size: 12px;
         margin-bottom: 12px;
     }
 
-    .certificate-container .text-first {
+     .text-first {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .certificate-container span.dynamic-text {
+     span.dynamic-text {
         border-bottom: 2px dotted #333;
         width: 250px;
         display: block;
@@ -94,20 +94,20 @@
         font-size: 15px;
     }
 
-    .certificate-container .bottom-box {
+     .bottom-box {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 20px;
     }
 
-    .certificate-container .date-box {
+     .date-box {
         font-size: 12px;
         margin-right: 160px;
         text-align: center;
     }
 
-    .certificate-container .date-dymanic {
+     .date-dymanic {
         border-bottom: 2px solid #999595;
         width: 116px;
         display: block;
@@ -117,12 +117,12 @@
         font-size: 14px;
     }
 
-    .certificate-container .signature-box {
+     .signature-box {
         text-align: center;
         font-size: 15px;
     }
 
-    .certificate-container .signature-box img {
+     .signature-box img {
         width: 116px;
         height: 40px;
         border-bottom: 2px solid #999595;
@@ -131,7 +131,19 @@
         object-fit: contain;
     }
 
-    .certificate-container .sign-text {
+    .start-quiz {
+    background-color: #ec4809;
+    border-color: #ec4809;
+    transition: all .3s ease-in-out;
+}
+    .start-quiz:hover {
+    background-color: #fff;
+    color: #ec4809;
+    border-color: #ec4809;
+
+}
+
+     .sign-text {
         font-size: 12px;
         line-height: 19px;
     }
@@ -199,10 +211,17 @@
                     <h5>उत्तर प्रदेश राज्य पुरातत्व विभाग के बारे में!</h5>
                     <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत...</p>
                 </section>
-            </div><br><br>
-            <input type="button" onclick="printDiv('printableArea')" value="print a div!" />
-            <a href="{{ route('homePage') }}" class="btn btn-primary" id="submitLink" role="button">New Quiz Start</a>
+            </div>
+           
         </div>
+
+        <div class="col-md-12">
+            <div class="text-center">
+            <input type="button" class="btn btn-primary" onclick="printDiv('printableArea')" value="Print Certificate" />
+            <a href="{{ route('homePage') }}" class="btn btn-primary start-quiz" id="submitLink" role="button">New Quiz Start</a>
+            </div>
+        </div>
+
     </div>
 </div>
 @section('script')
