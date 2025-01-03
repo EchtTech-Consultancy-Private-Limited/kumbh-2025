@@ -6,6 +6,7 @@ use App\Models\Oex_question_master;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 
 class QuizController extends Controller
 {    
@@ -93,11 +94,11 @@ class QuizController extends Controller
                 $correctCount++;
             }
         }
-        if($correctCount >= 7){
+        // if($correctCount >= 7){
             return view('quiz.quiz_certificate', compact('correctCount', 'user'));
-        }else{
-            return view('quiz.quiz_fail', compact('correctCount', 'user'));
-        }
+        // }else{
+        //     return view('quiz.quiz_fail', compact('correctCount', 'user'));
+        // }
     }
         
     /**
