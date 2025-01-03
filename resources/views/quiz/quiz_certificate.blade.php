@@ -9,71 +9,84 @@
         position: relative;
         width: 800px;
         height: 570px;
-        background-image: url("{{ asset('assets/images/certificate.png') }}");
+        /* background-image: url("{{ asset('assets/images/certificate.png') }}"); */
         background-size: cover;
         background-position: center;
     }
 
-    .logos {
+    .certificate-container .logos {
         text-align: center;
+        margin-bottom: 12px;
     }
 
-    .logos img {
+    .certificate-container .logos img {
         width: 70px;
     }
 
-    .logos img:first-child {
+    .certificate-container .logos img:first-child {
         border-right: 1px solid #333;
     }
 
-    .logos img:first-child {
+    .certificate-container .logos img:first-child {
         border-right: 2px solid #e1ae7b;
         padding-right: 10px;
     }
 
-    .logos img:not(:first-child) {
+    .certificate-container .logos img:not(:first-child) {
         padding-left: 5px;
     }
 
-    .content-box {
-        padding: 55px 45px;
-    }
+    .certificate-container .content-box {
+            padding: 32px 40px;
+            z-index: 9;
+            position: relative;
+        }
 
-    h2 {
+        .certificate-container img.bg-image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+        }
+
+        .certificate-container h2 {
         text-align: center;
         color: #333;
         margin-bottom: 15px;
+        font-size: 26px
     }
 
-    .devider-text {
+    .certificate-container .devider-text {
         font-size: 18px;
         color: #333;
         text-align: center;
         font-weight: 500;
     }
 
-    .main-text {
+    .certificate-container .main-text {
         color: #f53c3c;
         margin-top: 8px;
         text-align: center;
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
-
-    p {
-        text-align: center;
-        color: #333;
-        font-size: 14px;
+        font-size: 26px;
         margin-bottom: 18px;
     }
 
-    .text-first {
+    .certificate-container p {
+        text-align: center;
+        color: #333;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .certificate-container .text-first {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    span.dynamic-text {
+    .certificate-container span.dynamic-text {
         border-bottom: 2px dotted #333;
         width: 250px;
         display: block;
@@ -81,20 +94,20 @@
         font-size: 15px;
     }
 
-    .bottom-box {
+    .certificate-container .bottom-box {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 20px;
     }
 
-    .date-box {
+    .certificate-container .date-box {
         font-size: 12px;
         margin-right: 160px;
         text-align: center;
     }
 
-    .date-dymanic {
+    .certificate-container .date-dymanic {
         border-bottom: 2px solid #999595;
         width: 116px;
         display: block;
@@ -104,12 +117,12 @@
         font-size: 14px;
     }
 
-    .signature-box {
+    .certificate-container .signature-box {
         text-align: center;
         font-size: 15px;
     }
 
-    .signature-box img {
+    .certificate-container .signature-box img {
         width: 116px;
         height: 40px;
         border-bottom: 2px solid #999595;
@@ -118,7 +131,7 @@
         object-fit: contain;
     }
 
-    .sign-text {
+    .certificate-container .sign-text {
         font-size: 12px;
         line-height: 19px;
     }
@@ -138,7 +151,8 @@
             </div>
         </div>        
         <div class="text-center col-md-6 second-childd">
-            <div class="certificate-container">
+            <div class="certificate-container" id="printableArea">
+                <img src="{{ asset('assets/images/certificate.png') }}" alt="img" class="bg-image"/>
                 <div class="content-box">
                     <div class="logos">
                         <img src="{{asset('assets/images/mahakumbh.png')}}" alt="">
@@ -186,6 +200,7 @@
                     <p>उत्तर प्रदेश राज्य पुरातत्व विभाग आध्यात्मिक और पवित्र सांस्कृतिक विरासत...</p>
                 </section>
             </div><br><br>
+            <input type="button" onclick="printDiv('printableArea')" value="print a div!" />
             <a href="{{ route('homePage') }}" class="btn btn-primary" id="submitLink" role="button">New Quiz Start</a>
         </div>
     </div>
@@ -218,6 +233,17 @@ $(document).ready(function() {
     });
 
 });
+
+function printDiv(divId) {
+     var printContents = document.getElementById(divId).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
 </script>
 @endsection
 @endsection
